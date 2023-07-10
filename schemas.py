@@ -1,5 +1,4 @@
 from marshmallow import Schema, fields
-from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
 
 class PhoneSchema(Schema):
@@ -12,7 +11,7 @@ class EmailSchema(Schema):
     email = fields.String(required=True)
 
 
-class UserSchema(SQLAlchemyAutoSchema):
+class UserSchema(Schema):
     id = fields.Integer(dump_only=True)
     lastName = fields.String(required=True)
     firstName = fields.String(required=True)
